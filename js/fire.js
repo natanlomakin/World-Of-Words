@@ -21,16 +21,21 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 // Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
-testData();
 
-async function testData() {
-    const playersRef = collection(db, "players");
+// testData();
 
-    const querySnapshot = await getDocs(playersRef);
-    querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-    });
-}
+// export function getCollectionRef(name) {
+//   return collection(db, name);
+// }
+
+// async function testData() {
+//     const playersRef = collection(db, 'players');
+
+//     const querySnapshot = await getDocs(playersRef);
+//     querySnapshot.forEach((doc) => {
+//         // doc.data() is never undefined for query doc snapshots
+//         console.log(doc.id, ' => ', doc.data());
+//     });
+// }
