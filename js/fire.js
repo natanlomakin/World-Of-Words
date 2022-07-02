@@ -5,6 +5,7 @@ import { collection, getDocs, getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+// TODO: hide firebaseConfig values from public github code
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -20,15 +21,16 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+// TODO not export DB
 // Initialize Cloud Firestore and get a reference to the service
 export const db = getFirestore(app);
 
 
 // testData();
 
-// export function getCollectionRef(name) {
-//   return collection(db, name);
-// }
+export function getCollectionRef(name) {
+  return collection(db, name);
+}
 
 // async function testData() {
 //     const playersRef = collection(db, 'players');
