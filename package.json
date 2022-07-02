@@ -6,7 +6,6 @@
   "license": "",
   "author": "",
   "scripts": {
-    
     "build": "parcel build ./*.html",
     "dev": "parcel ./*.html --open",
     "start": "npm run build && npm run dev",
